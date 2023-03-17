@@ -1,0 +1,233 @@
+
+:root {
+    --clr-primary-red: hsl(0, 100%, 67%);
+    --clr-primary-teal: hsl(166, 100%, 37%);
+    --clr-primary-yellow: hsl(39, 100%, 56%);
+    --clr-primary-blue: hsl(234, 85%, 45%);
+
+    /* Low opacity primary*/
+    --clr-primary-red-transparent: hsla(0, 100%, 67%, 0.1);
+    --clr-primary-teal-transparent: hsla(166, 100%, 37%, 0.1);
+    --clr-primary-yellow-transparent: hsla(39, 100%, 56%, 0.1);
+    --clr-primary-blue-transparent: hsla(234, 85%, 45%, 0.1);
+    
+    --clr-gradient: linear-gradient(to top, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
+    --clr-gradient-circle: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(221, 100%, 96%);
+    --clr-neutral-300: hsl(241, 100%, 89%);
+    --clr-neutral-600: hsl(224, 30%, 27%);
+
+    /* Low opacity neutral*/
+    --clr-neutral-600-transparent: hsla(224, 30%, 27%, 0.5);
+
+    --ff-default: 'Hanken Grotesk', sans-serif;
+    --fw-regular-500: 500;
+    --fw-bold-700: 700;
+    --fw-extrabold-800: 800;
+
+    --fs-1000: 1rem;
+    --fs-1125: 1.125rem;
+    --fs-1250: 1.25rem;
+    --fs-1500: 1.5rem;
+    --fs-1750: 1.750rem;
+    --fs-2000: 2rem;
+    --fs-3500: 3.5rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+    font: inherit;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html, body {
+    height: 100%;
+}
+
+/*
+    4. Improve media defaults
+  */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    5. Avoid text overflows
+  */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+
+/* general */
+body{
+    font-size: var(--fs-1125);
+    font-family: var(--ff-default);
+    font-weight: var(--fw-regular-500)
+}
+
+button {
+    background-color: var(--clr-neutral-600);
+    color: var(--clr-neutral-100);
+    cursor: pointer;
+    width: 100%;
+    padding: 1rem 2rem;
+    border: 0;
+    border-radius: 30rem;
+}
+button:is(:hover, :focus){
+    background: var(--clr-gradient);
+}
+
+/* utilities */
+.section-title{
+    font-weight: var(--fw-bold-700);
+    font-size: var(--fs-1250);
+}
+
+.flex-group{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.flex-group p{
+    font-weight: var(--fw-bold-700);
+}
+
+/* result summary */
+.result-summary{
+    --gap: 1.5rem;
+    --padding: 1.5rem 3rem;
+    --main-padding: 1.75rem;
+    display: grid;
+    max-width: 46rem;
+}
+.result-summary > * {
+    padding: var(--main-padding);
+}
+.result__section{
+    display: grid;
+    text-align: center;
+    background: var(--clr-gradient);
+    border-radius: 0 0 1.5rem 1.5rem;
+    gap: var(--gap);
+    padding: var(--padding);
+    color: var(--clr-neutral-300);
+}
+
+.result__score{
+    background: var(--clr-gradient-circle);
+    display: grid;
+    place-content: center;
+    width: 9rem;
+    margin-inline: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.result__score > span {
+    display: block;
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-3500);
+}
+
+.result__message{
+    font-size: var(--fs-1000);
+    display: grid;
+    gap: 0.5rem;
+    margin-block-end: 1rem;
+}
+
+.rank{
+    font-size: var(--fs-1500);
+    font-weight: var(--fw-bold-700);
+    color: var(--clr-neutral-100);
+}
+
+/* summary section */
+.summary__section{
+    --gap-big: 1.25rem;
+    --gap-small: 1.125rem;
+    --letter-spacing: 1.125px;
+    display: grid;
+    gap: var(--gap);
+}
+
+.summary__categories{
+    display: grid;
+    gap: var(--gap-small);
+}
+
+.summary__title{
+    display: flex;
+    gap: 1rem;
+}
+.flex-group p{
+    font-size: var(--fs-1000);
+}
+.summary__score{
+    color: var(--clr-neutral-600-transparent);
+    word-spacing: var(--letter-spacing);
+    font-weight: var(--fw-bold-700);
+}
+.summary__score > span { 
+    color: var(--clr-neutral-600);
+}
+/* summary categories */
+.reaction{    
+    background-color: var(--clr-primary-red-transparent);
+    color: var(--clr-primary-red);
+}
+.memory{
+    background-color: var(--clr-primary-yellow-transparent);
+    color: var(--clr-primary-yellow); 
+}
+
+.verbal{
+    background-color: var(--clr-primary-teal-transparent);
+    color: var(--clr-primary-teal);
+}
+.visual{
+    background-color: var(--clr-primary-blue-transparent);
+    color: var(--clr-primary-blue);
+}
+
+
+@media (min-width: 600px){
+    main{
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+
+    .result-summary{
+        grid-template-columns: 1fr 1fr;
+        box-shadow: 0.5rem 1rem 3rem var(--clr-neutral-600-transparent);
+        border-radius: 1.25rem;
+        overflow: hidden;
+    }
+    .result__section{
+        border-radius: 1.25rem;
+    }
+    .result__message{
+        font-size: 1.15rem;
+    }
+}
+
+
