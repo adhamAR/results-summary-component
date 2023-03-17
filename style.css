@@ -145,6 +145,7 @@ button:is(:hover, :focus){
     display: block;
     color: var(--clr-neutral-100);
     font-size: var(--fs-3500);
+    font-weight: var(--fw-extrabold-800);
 }
 
 .result__message{
